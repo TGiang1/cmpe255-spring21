@@ -8,31 +8,34 @@ class Solution:
         # Load data from data/chipotle.tsv file using Pandas library and 
         # assign the dataset to the 'chipo' variable.
         file = 'data/chipotle.tsv'
-        self.chipo = 'FIXME'
+        self.chipo = pd.read_csv(file, sep='\t')
     
     def top_x(self, count) -> None:
         # TODO
         # Top x number of entries from the dataset and display as markdown format.
-        topx = 'FIXME'
+        topx = self.chipo.head(count)
         print(topx.to_markdown())
         
     def count(self) -> int:
         # TODO
         # The number of observations/entries in the dataset.
-        return -1
+        # we can use the shape attribute to get the (row, col) of the dataframe. Then, we index to get the row/entries of the dataset.
+        return self.chipo.shape[0]
+        
     
     def info(self) -> None:
         # TODO
         # print data info.
-        pass
+        self.chipo.info()
     
     def num_column(self) -> int:
         # TODO return the number of columns in the dataset
-        return -1
+        # we can use the shape attribute to get the (row, col) of the dataframe. Then, we index to get the num of col of the dataset.
+        return self.chipo.shape[1]
     
     def print_columns(self) -> None:
         # TODO Print the name of all the columns.
-        pass
+        self.chipo.columns
     
     def most_ordered_item(self):
         # TODO
@@ -105,6 +108,7 @@ def test() -> None:
     solution.info()
     count = solution.num_column()
     assert count == 5
+    """
     item_name, order_id, quantity = solution.most_ordered_item()
     assert item_name == 'Chicken Bowl'
     assert order_id == 713926	
@@ -117,7 +121,7 @@ def test() -> None:
     assert 50 == solution.num_different_items_sold()
     solution.plot_histogram_top_x_popular_items(5)
     solution.scatter_plot_num_items_per_order_price()
-
+    """
     
 if __name__ == "__main__":
     # execute only if run as a script
