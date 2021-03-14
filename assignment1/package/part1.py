@@ -55,10 +55,6 @@ def linearRegression(data, col_name):
     
     #Calculate R2 Score
     print("And, the reported R-squared score between the predicted MEDV and actual MEDV is", r2_score(y_test, y_pred))
-    #print(y_train.name)
-    #print(X_train[col_name].name)
-    #y_pred = regressor.predict(X_test)
-    return r2_score(y_test, y_pred)
 
 # This function is an add on to part1. We loop through every feature of the dataframe.
 # For each loop, we train the linear regression model, plot the data (train and test) against this model, and calculate the RMSE score and R2 score.
@@ -79,7 +75,7 @@ def run(data):
     ut.viewCorrHeatmap(data)
     print("Since this feature has a high correlation score to MEDV, let us choose RM as the feature to train and test the Linear Regression model.")
     print("Train LinearRegression model using just RM, or average number of rooms per dwelling.")
-    r2_score = linearRegression(data, 'RM') 
+    linearRegression(data, 'RM') 
 
     print("\n")
-    return r2_score
+    
