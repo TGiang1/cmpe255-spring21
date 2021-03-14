@@ -10,7 +10,7 @@ Outside of the package, I have a main.py script which imports the package module
 
 Now, let me explain how I did each part of the assignment.
 
-##Part1:
+## Part1:
 I decided to choose RM (average number of rooms per dwelling) as the feature due to its high correlation with MEDV.
 ![heatmap](images/heatmap.png)
 
@@ -24,7 +24,7 @@ As we can see from the output, the RMSE score is 6.38 and the R-squared score is
 
 As an addition to part1, I also have a method called run_loop that loops through all of the features and trys the linear regression model on it to see how well it predicts MEDV. The main.py script runs this method (whole output can be seen in output.txt).
 
-##Part2:
+## Part2:
 I use RM as the same feature to test polynomial regression (degree2). The difference is that we must generated a new dataframe with additional columns (feature^0 and feature^2). This can be done with PolynomialFeatures() and fit_transform(). After we obtained the desired 3-column data of powers of the feature, we do the same LinearRegression model and test and plot. The plot was a bit tricky, as we have to do some reshaping of input array in order to plot the best fit curve. The best fit curve on the training data is:
 ![part2_curve_ontrain](images/part2_curve_ontrain.png)
 
@@ -41,7 +41,7 @@ And the best fit curve (degree20) on the test data is:
 
 As we can see from the output, using RM as the feature and polynomial regression of degree20, the RMSE score is 5.489 and the R-squared score is 0.695.
 
-##Part3:
+## Part3:
 This part is basically the same as part1, but we use multiple features (multiple columns to pass into as X_train for the model) instead of a single feature. I decided to choose 6 features that are highly correlated to MEDV: (INDUS, NOX, RM, TAX, PTRATIO, LSTAT). 
 
 As we can see from the output, the RMSE score is 5.47, the R-squared score is 0.6968, and the adjusted R-sqaured score is 0.6922. 
