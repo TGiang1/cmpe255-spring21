@@ -1,0 +1,5 @@
+pandas
+numpy
+matplotlib
+sklearn
+tabulate==0.8.7
