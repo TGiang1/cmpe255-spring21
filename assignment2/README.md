@@ -92,6 +92,7 @@ Afterwards, I then set the model pipeline's SVC params with best params as found
 
 I make the predictions on the training set, and print out the classification report as well as the accuracy scores:
 
+![images/classification_report](images/classification_report.png)
 ![images/scores](images/scores.png)
 
 As we can see, our model performs quite well on the test data, with overall accuracy of 84% and around the same precision, recall, and F1-score (84% precision, 80% recall, 81.5% F1). This is quite good because we have used PCA to reduce dimensionality from around 3000 features to 150 features, and so some information is bound to be lost. Also, we are just using a simple rbf kernel SVC classifier with nothing too fancy, so a 84% classification accuracy is really good considering this!
